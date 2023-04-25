@@ -1,9 +1,8 @@
 package com.example.damo.domains.group.repositories;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
+import com.example.damo.domains.group.entities.Group;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@RequiredArgsConstructor
-@Repository
-public class GroupRepository {
+
+public interface GroupRepository extends JpaRepository<Group, Long> {
 }

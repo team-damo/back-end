@@ -2,26 +2,43 @@ package com.example.damo.domains.group.entities;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.util.Assert;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Getter
+@NoArgsConstructor
+@Entity
+@Table(name = "`groups`")
 public class Group {
-    private final Long id;
-    private final Long userId;
-    private final Byte typeId;
-    private final String name;
-    private final String introduction;
-    private final Integer maxUser;
-    private final Boolean isDone;
-    private final LocalDateTime deadlineAt;
-    private final LocalDateTime createdAt;
-    private final LocalDateTime deletedAt;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+    @Column(name = "user_id", nullable = false)
+    private Long userId;
+    @Column(name = "type_id", nullable = false)
+    private Integer typeId;
+    @Column(name = "name", length = 20, nullable = false)
+    private String name;
+    @Column(name = "introduction", length = 200, columnDefinition = "TEXT", nullable = false)
+    private String introduction;
+    @Column(name = "max_user", nullable = false)
+    private Integer maxUser;
+    @Column(name = "is_done", nullable = false)
+    private Boolean isDone;
+    @Column(name = "deadline_at", nullable = true)
+    private LocalDateTime deadlineAt;
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt;
+    @Column(name = "deleted_at", nullable = true)
+    private LocalDateTime deletedAt;
 
     @Builder
-    public Group(Long id, Long userId, Byte typeId, String name, String introduction, Integer maxUser, Boolean isDone, LocalDateTime deadlineAt, LocalDateTime createdAt, LocalDateTime deletedAt) {
+    public Group(Long id, Long userId, Integer typeId, String name, String introduction, Integer maxUser, Boolean isDone, LocalDateTime deadlineAt, LocalDateTime createdAt, LocalDateTime deletedAt) {
         this.id = id;
         this.userId = Objects.requireNonNull(userId);
         this.typeId = Objects.requireNonNull(typeId);
