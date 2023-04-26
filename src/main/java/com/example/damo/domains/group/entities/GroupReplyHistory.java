@@ -29,7 +29,7 @@ public class GroupReplyHistory {
     private Boolean isChecked;
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
-    @Column(name = "checked_at", nullable = true)
+    @Column(name = "checked_at")
     private LocalDateTime checkedAt;
 
     @Builder

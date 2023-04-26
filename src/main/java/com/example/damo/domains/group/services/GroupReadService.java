@@ -1,6 +1,7 @@
 package com.example.damo.domains.group.services;
 
 import com.example.damo.domains.group.dtos.GroupDto;
+import com.example.damo.domains.group.dtos.GroupFindAllByTypeIdDto;
 import com.example.damo.domains.group.entities.Group;
 import com.example.damo.domains.group.repositories.GroupRepository;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +15,7 @@ import java.util.stream.Collectors;
 public class GroupReadService {
     private final GroupRepository groupRepository;
 
-    public List<GroupDto> findAll(Integer type) {
+    public List<GroupFindAllByTypeIdDto> findAll(Integer type) {
          return groupRepository
                  .findAllByTypeIdOrderByCreatedAtDesc(type)
                  .stream()
@@ -22,11 +23,11 @@ public class GroupReadService {
                  .collect(Collectors.toList());
     }
 
-    private GroupDto toDto(Group group) {
-        return new GroupDto(
+    private GroupFindAllByTypeIdDto toDto(Group group) {
+        return new GroupFindAllByTypeIdDto(
                 group.getId(),
                 group.getUserId(),
-                group.getTypeId(),
+                group.getGroupType().getName(),
                 group.getName(),
                 group.getIntroduction(),
                 group.getMaxUser(),

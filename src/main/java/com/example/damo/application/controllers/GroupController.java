@@ -1,6 +1,7 @@
 package com.example.damo.application.controllers;
 
 import com.example.damo.domains.group.dtos.GroupDto;
+import com.example.damo.domains.group.dtos.GroupFindAllByTypeIdDto;
 import com.example.damo.domains.group.services.GroupReadService;
 import com.example.damo.domains.group.services.GroupWriteService;
 import lombok.RequiredArgsConstructor;
@@ -16,11 +17,12 @@ public class GroupController {
     private final GroupReadService groupReadService;
 
     @GetMapping("/{type}")
-    public List<GroupDto> findAll(@PathVariable Integer type) {
+    public List<GroupFindAllByTypeIdDto> findAll(@PathVariable Integer type) {
         return groupReadService.findAll(type);
     }
     @PostMapping()
     public void create(@RequestBody GroupDto groupDto) {
+        System.out.println(groupDto.toString());
         groupWriteService.create(groupDto);
     }
 }

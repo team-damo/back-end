@@ -3,6 +3,7 @@ package com.example.damo.domains.group.entities;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Getter
+@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "`groups`")
@@ -20,7 +22,12 @@ public class Group {
     private Long id;
     @Column(name = "user_id", nullable = false)
     private Long userId;
-    @Column(name = "type_id", nullable = false)
+
+    @ManyToOne(targetEntity = GroupType.class)
+    @JoinColumn(name = "type_id", insertable = false, updatable = false)
+    private GroupType groupType;
+
+    @Column(name = "type_id")
     private Integer typeId;
     @Column(name = "name", length = 20, nullable = false)
     private String name;
@@ -30,17 +37,18 @@ public class Group {
     private Integer maxUser;
     @Column(name = "is_done", nullable = false)
     private Boolean isDone;
-    @Column(name = "deadline_at", nullable = true)
+    @Column(name = "deadline_at")
     private LocalDateTime deadlineAt;
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private LocalDateTime deletedAt;
 
     @Builder
-    public Group(Long id, Long userId, Integer typeId, String name, String introduction, Integer maxUser, Boolean isDone, LocalDateTime deadlineAt, LocalDateTime createdAt, LocalDateTime deletedAt) {
+    public Group(Long id, Long userId,Integer typeId, GroupType groupType, String name, String introduction, Integer maxUser, Boolean isDone, LocalDateTime deadlineAt, LocalDateTime createdAt, LocalDateTime deletedAt) {
         this.id = id;
         this.userId = Objects.requireNonNull(userId);
+        this.groupType = groupType;
         this.typeId = Objects.requireNonNull(typeId);
         this.name = Objects.requireNonNull(name);
         this.introduction = Objects.requireNonNull(introduction);

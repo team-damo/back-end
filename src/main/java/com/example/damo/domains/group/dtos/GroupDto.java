@@ -1,15 +1,21 @@
 package com.example.damo.domains.group.dtos;
 
 import com.example.damo.domains.group.entities.Group;
-import lombok.Data;
+import com.example.damo.domains.group.entities.GroupType;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Builder
 public class GroupDto {
     private Long id;
     private Long userId;
     private Integer typeId;
+    private GroupType groupType;
     private String name;
     private String introduction;
     private Integer maxUser;
@@ -18,24 +24,12 @@ public class GroupDto {
     private LocalDateTime createdAt;
     private LocalDateTime deletedAt;
 
-    public GroupDto(Long id, Long userId, Integer typeId, String name, String introduction, Integer maxUser, Boolean isDone, LocalDateTime deadlineAt, LocalDateTime createdAt, LocalDateTime deletedAt) {
-        this.id = id;
-        this.userId = userId;
-        this.typeId = typeId;
-        this.name = name;
-        this.introduction = introduction;
-        this.maxUser = maxUser;
-        this.isDone = isDone;
-        this.deadlineAt = deadlineAt;
-        this.createdAt = createdAt;
-        this.deletedAt = deletedAt;
-    }
-
     public Group toEntity(){
         return Group.builder()
                 .id(id)
                 .userId(userId)
                 .typeId(typeId)
+                .groupType(groupType)
                 .name(name)
                 .introduction(introduction)
                 .maxUser(maxUser)
