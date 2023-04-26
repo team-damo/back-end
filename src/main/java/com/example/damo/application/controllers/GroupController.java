@@ -2,6 +2,7 @@ package com.example.damo.application.controllers;
 
 import com.example.damo.domains.group.dtos.GroupDto;
 import com.example.damo.domains.group.dtos.GroupFindAllByTypeIdDto;
+import com.example.damo.domains.group.dtos.GroupSaveDto;
 import com.example.damo.domains.group.services.GroupReadService;
 import com.example.damo.domains.group.services.GroupWriteService;
 import lombok.RequiredArgsConstructor;
@@ -21,8 +22,7 @@ public class GroupController {
         return groupReadService.findAll(type);
     }
     @PostMapping()
-    public void create(@RequestBody GroupDto groupDto) {
-        System.out.println(groupDto.toString());
-        groupWriteService.create(groupDto);
+    public void create(@RequestBody GroupSaveDto groupSaveDto) {
+        groupWriteService.create(groupSaveDto);
     }
 }

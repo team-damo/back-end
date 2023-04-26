@@ -1,6 +1,6 @@
 package com.example.damo.domains.group.services;
 
-import com.example.damo.domains.group.dtos.GroupDto;
+import com.example.damo.domains.group.dtos.GroupSaveDto;
 import com.example.damo.domains.group.repositories.GroupRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class GroupWriteService {
     private final GroupRepository groupRepository;
 
-    public void create(GroupDto groupDto) {
-        groupRepository.save(groupDto.toEntity());
+    public void create(GroupSaveDto groupSaveDto) {
+        groupRepository.save(groupSaveDto.toEntity());
     }
 }

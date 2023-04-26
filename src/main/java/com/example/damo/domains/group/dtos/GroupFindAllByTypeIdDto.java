@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Builder
 public class GroupFindAllByTypeIdDto {
     private Long id;
