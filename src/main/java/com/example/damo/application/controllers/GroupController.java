@@ -1,6 +1,5 @@
 package com.example.damo.application.controllers;
 
-import com.example.damo.domains.group.dtos.GroupDto;
 import com.example.damo.domains.group.dtos.GroupFindAllByTypeIdDto;
 import com.example.damo.domains.group.dtos.GroupSaveDto;
 import com.example.damo.domains.group.services.GroupReadService;
