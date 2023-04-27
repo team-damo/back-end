@@ -1,7 +1,7 @@
 package com.example.damo.domains.group.services;
 
-import com.example.damo.domains.group.dtos.GroupDto;
 import com.example.damo.domains.group.dtos.GroupFindAllByTypeIdDto;
+import com.example.damo.domains.group.dtos.GroupFindByIdDto;
 import com.example.damo.domains.group.entities.Group;
 import com.example.damo.domains.group.repositories.GroupRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,12 +19,31 @@ public class GroupReadService {
          return groupRepository
                  .findAllByTypeIdOrderByCreatedAtDesc(type)
                  .stream()
-                 .map(this::toDto)
+                 .map(this::toTypeIdDto)
                  .collect(Collectors.toList());
     }
 
-    private GroupFindAllByTypeIdDto toDto(Group group) {
+    public GroupFindByIdDto findById(Long id) {
+        Group group = groupRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("not found"));
+        return toIdDto(group);
+    }
+
+    private GroupFindAllByTypeIdDto toTypeIdDto(Group group) {
         return new GroupFindAllByTypeIdDto(
+                group.getId(),
+                group.getUserId(),
+                group.getGroupType().getName(),
+                group.getName(),
+                group.getIntroduction(),
+                group.getMaxUser(),
+                group.getIsDone(),
+                group.getDeadlineAt(),
+                group.getCreatedAt(),
+                group.getDeletedAt()
+        );
+    }
+    private GroupFindByIdDto toIdDto(Group group) {
+        return new GroupFindByIdDto(
                 group.getId(),
                 group.getUserId(),
                 group.getGroupType().getName(),

@@ -1,9 +1,8 @@
 package com.example.damo.application.controllers;
 
-import com.example.damo.domains.group.dtos.GroupFindAllByTypeIdDto;
-import com.example.damo.domains.group.dtos.GroupRegisterInquiryDto;
-import com.example.damo.domains.group.dtos.GroupRegisterInquiryReplyDto;
-import com.example.damo.domains.group.dtos.GroupSaveDto;
+import com.example.damo.application.usecases.groups.GetGroupUsecase;
+import com.example.damo.application.usecases.groups.dtos.GetGroupUsecaseDto;
+import com.example.damo.domains.group.dtos.*;
 import com.example.damo.domains.group.services.GroupReadService;
 import com.example.damo.domains.group.services.GroupWriteService;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +16,11 @@ import java.util.List;
 public class GroupController {
     private final GroupWriteService groupWriteService;
     private final GroupReadService groupReadService;
-
+    private final GetGroupUsecase getGroupUsecase;
+    @GetMapping("/{group}/{user}")
+    public GetGroupUsecaseDto getById(@PathVariable Long group, @PathVariable Long user) {
+        return getGroupUsecase.getGroupWithIsInquirer(group, user);
+    }
     @GetMapping("/{type}")
     public List<GroupFindAllByTypeIdDto> findAll(@PathVariable Integer type) {
         return groupReadService.findAll(type);
@@ -26,6 +29,7 @@ public class GroupController {
     public void create(@RequestBody GroupSaveDto groupSaveDto) {
         groupWriteService.create(groupSaveDto);
     }
+
 
     @PostMapping("/inquiry")
     public void registerInquiry(@RequestBody GroupRegisterInquiryDto groupRegisterInquiryDto) {

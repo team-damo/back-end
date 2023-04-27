@@ -65,6 +65,7 @@ CREATE TABLE `group_inquiry_reply_history` (
 	`id`	int	NOT NULL AUTO INCREMENT,
 	`group_id`	int	NOT NULL,
 	`user_id`	int	NOT NULL,
+	`inquirer_id` int NOT NULL,
 	`contents`	varchar(300)	NOT NULL,
 	`is_checked`	boolean	NOT NULL,
 	`created_at`	timestamp	NOT NULL,
