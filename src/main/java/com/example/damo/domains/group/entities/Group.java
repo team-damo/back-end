@@ -55,7 +55,7 @@ public class Group {
         validateMaxLengthBy(name, NAME_SAFE_MAX_LENGTH);
         validateMaxLengthBy(introduction, INTRODUCTION_SAFE_MAX_LENGTH);
         this.maxUser = maxUser == null ? MAX_USER : maxUser;
-        this.isDone = Objects.requireNonNull(isDone);
+        this.isDone = isDone != null && isDone;
         this.createdAt = createdAt != null ? createdAt : LocalDateTime.now();
         this.deadlineAt = deadlineAt;
         this.deletedAt = deletedAt;

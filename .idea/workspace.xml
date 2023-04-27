@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f3ec540-b6a6-4bd9-a675-b5001507deb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/dtos/GroupRegisterInquiryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/repositories/GroupInquiryHistoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/dtos/GroupRegisterInquiryReplyDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/repositories/GroupInquiryReplyHistoryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
@@ -16,16 +16,31 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/SwaggerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/SwaggerConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/application/controllers/GroupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/application/controllers/GroupController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/dtos/GroupSaveDto$GroupSaveDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/dtos/GroupSaveDto$GroupSaveDtoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/dtos/GroupSaveDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/dtos/GroupSaveDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/Group.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupInquiryHistory$GroupInquiryHistoryBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupInquiryHistory$GroupInquiryHistoryBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupInquiryHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupInquiryHistory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupReplyHistory$GroupReplyHistoryBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupReplyHistory.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/services/GroupWriteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/services/GroupWriteService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/SwaggerConfig.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GroupController.class.uniqueId4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GroupInquiryHistory$GroupInquiryHistoryBuilder.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GroupInquiryHistory.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GroupInquiryHistoryRepository.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GroupRegisterInquiryDto$GroupRegisterInquiryDtoBuilder.class.uniqueId5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GroupRegisterInquiryDto.class.uniqueId6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GroupWriteService.class.uniqueId0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/damo/application/controllers/GroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/application/controllers/GroupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/GroupInquiryHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/GroupInquiryHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/dtos/GroupSaveDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/dtos/GroupSaveDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/GroupReplyHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/GroupInquiryReplyHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/repositories/GroupInquiryHistoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/repositories/GroupInquiryHistoryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/services/GroupWriteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/services/GroupWriteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

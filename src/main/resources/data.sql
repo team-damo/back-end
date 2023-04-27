@@ -1,26 +1,26 @@
 CREATE TABLE `groups` (
-	`id`	int	NOT NULL,
+	`id`	int	NOT NULL AUTO INCREMENT,
 	`user_id`	int	NOT NULL,
 	`type_id`	tinyint	NOT NULL,
 	`name`	varchar(20)	NOT NULL,
 	`introduction`	varchar(200)	NOT NULL,
-	`max_user`	smallint	NOT NULL	DEFAULT 10,
-	`is_done`	boolean	NOT NULL	DEFAULT 0,
-	`deadline_date`	timestamp	NULL	DEFAULT null,
+	`max_user`	smallint	NOT NULL,
+	`is_done`	boolean	NOT NULL,
+	`deadline_date`	timestamp	NULL,
 	`created_at`	timestamp	NOT NULL,
-	`deleted_at`	timestamp	NULL	DEFAULT null
+	`deleted_at`	timestamp	NULL
 );
 
 CREATE TABLE `users` (
-	`id`	int	NOT NULL,
+	`id`	int	NOT NULL AUTO INCREMENT,
 	`level_id`	tinyint	NOT NULL,
 	`auth_type`	tinyint	NOT NULL,
 	`email`	varchar(30)	NOT NULL,
 	`nickname`	varchar(15)	NOT NULL,
-	`image`	varchar(150)	NULL	DEFAULT default.jpg,
+	`image`	varchar(150)	NULL.jpg,
 	`link`	varchar(300)	NULL,
-	`created_at`	timestamp	NOT NULL	DEFAULT 현재시간,
-	`deleted_at`	timestamp	NULL	DEFAULT null
+	`created_at`	timestamp	NOT NULL,
+	`deleted_at`	timestamp	NULL
 );
 
 CREATE TABLE `levels` (
@@ -34,45 +34,46 @@ CREATE TABLE `group_types` (
 );
 
 CREATE TABLE `group_members` (
-	`id`	int	NOT NULL	COMMENT 'auto_increament',
+	`id`	int	NOT NULL AUTO INCREMENT,
 	`group_id`	int	NOT NULL,
 	`user_id`	int	NOT NULL,
 	`created_at`	timestamp	NOT NULL,
-	`deleted_at`	timestamp	NULL	DEFAULT null
+	`deleted_at`	timestamp	NULL
 );
 
 CREATE TABLE `group_join_history` (
-	`id`	int	NOT NULL	COMMENT 'auto_increament',
+	`id`	int	NOT NULL AUTO INCREMENT,
 	`group_id`	int	NOT NULL,
 	`user_id`	int	NOT NULL,
 	`meesage`	varchar(100)	NOT NULL,
 	`status`	tinyint	NOT NULL	COMMENT '1: 가입, 2: 거절, 3:대기',
 	`created_at`	timestamp	NOT NULL,
-	`updated_at`	timestamp	NULL	DEFAULT null	COMMENT '신청 상태 반영일'
+	`updated_at`	timestamp	NULL	COMMENT '신청 상태 반영일'
 );
 
-CREATE TABLE `group_inquiry_history` (
-	`id`	int	NOT NULL	COMMENT 'auto_increament',
+CREATE TABLE `group_inquiry_history` (
+	`id`	int	NOT NULL AUTO INCREMENT,
 	`group_id`	int	NOT NULL,
 	`user_id`	int	NOT NULL,
 	`contents`	varchar(300)	NOT NULL,
-	`is_checked`	boolean	NOT NULL	DEFAULT 0,
+	`is_checked`	boolean	NOT NULL,
 	`created_at`	timestamp	NOT NULL,
-	`checked_at`	timestamp	NULL	DEFAULT null
+	`checked_at`	timestamp	NULL
 );
 
-CREATE TABLE `group_reply_history` (
-	`id`	int	NOT NULL	COMMENT 'auto_increament',
+CREATE TABLE `group_inquiry_reply_history` (
+	`id`	int	NOT NULL AUTO INCREMENT,
 	`group_id`	int	NOT NULL,
 	`user_id`	int	NOT NULL,
+	`inquirer_id` int NOT NULL,
 	`contents`	varchar(300)	NOT NULL,
-	`is_checked`	boolean	NOT NULL	DEFAULT 0,
+	`is_checked`	boolean	NOT NULL,
 	`created_at`	timestamp	NOT NULL,
-	`checked_at`	timestamp	NULL	DEFAULT null
+	`checked_at`	timestamp	NULL
 );
 
 CREATE TABLE `group_hit_history` (
-	`id`	int	NOT NULL	COMMENT 'auto_increament',
+	`id`	int	NOT NULL AUTO INCREMENT,
 	`group_id`	int	NOT NULL,
 	`user_id`	int	NOT NULL,
 	`created_at`	timestamp	NOT NULL
@@ -107,11 +108,11 @@ ALTER TABLE `group_join_history` ADD CONSTRAINT `PK_GROUP_JOIN_HISTORY` PRIMARY 
 	`id`
 );
 
-ALTER TABLE `group_inquiry_history` ADD CONSTRAINT `PK_GROUP_INQUIRY_HISTORY` PRIMARY KEY (
+ALTER TABLE `group_inquiry_history` ADD CONSTRAINT `PK_GROUP_INQUIRY_HISTORY` PRIMARY KEY (
 	`id`
 );
 
-ALTER TABLE `group_reply_history` ADD CONSTRAINT `PK_GROUP_REPLY_HISTORY` PRIMARY KEY (
+ALTER TABLE `group_inquiry_reply_history` ADD CONSTRAINT `PK_GROUP_INQUIRY_REPLY_HISTORY` PRIMARY KEY (
 	`id`
 );
 

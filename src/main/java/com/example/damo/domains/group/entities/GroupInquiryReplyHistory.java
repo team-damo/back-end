@@ -13,14 +13,21 @@ import java.util.Objects;
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name = "group_reply_history")
-public class GroupReplyHistory {
+@Table(name = "group_inquiry_reply_history")
+public class GroupInquiryReplyHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+    // TODO: User Entity 생성되면 연동
     @Column(name = "user_id", nullable = false)
     private Long userId;
+    @Column(name = "inquirer_id", nullable = false)
+    private Long inquirerId;
+
+    @ManyToOne(targetEntity = Group.class)
+    @JoinColumn(name = "group_id", insertable = false, updatable = false)
+    private Group group;
     @Column(name = "group_id", nullable = false)
     private Long groupId;
     @Column(name = "contents", columnDefinition = "TEXT", nullable = false, length = 300)
@@ -33,9 +40,11 @@ public class GroupReplyHistory {
     private LocalDateTime checkedAt;
 
     @Builder
-    public GroupReplyHistory(Long id, Long userId, Long groupId, String contents, Boolean isChecked, LocalDateTime createdAt, LocalDateTime checkedAt) {
+    public GroupInquiryReplyHistory(Long id, Long userId, Long inquirerId, Group group, Long groupId, String contents, Boolean isChecked, LocalDateTime createdAt, LocalDateTime checkedAt) {
         this.id = id;
         this.userId = Objects.requireNonNull(userId);
+        this.inquirerId = Objects.requireNonNull(inquirerId);
+        this.group = group;
         this.groupId = Objects.requireNonNull(groupId);
         this.contents = Objects.requireNonNull(contents);
         validateMaxLengthBy(contents, CONTENTS_SAFE_MAX_LENGTH);

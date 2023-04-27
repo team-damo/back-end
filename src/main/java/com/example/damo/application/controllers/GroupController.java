@@ -2,6 +2,7 @@ package com.example.damo.application.controllers;
 
 import com.example.damo.domains.group.dtos.GroupFindAllByTypeIdDto;
 import com.example.damo.domains.group.dtos.GroupRegisterInquiryDto;
+import com.example.damo.domains.group.dtos.GroupRegisterInquiryReplyDto;
 import com.example.damo.domains.group.dtos.GroupSaveDto;
 import com.example.damo.domains.group.services.GroupReadService;
 import com.example.damo.domains.group.services.GroupWriteService;
@@ -29,5 +30,9 @@ public class GroupController {
     @PostMapping("/inquiry")
     public void registerInquiry(@RequestBody GroupRegisterInquiryDto groupRegisterInquiryDto) {
         groupWriteService.registerInquiry(groupRegisterInquiryDto);
+    }
+    @PostMapping("/inquiry/reply")
+    public void registerInquiryReply(@RequestBody GroupRegisterInquiryReplyDto groupRegisterInquiryReplyDto) {
+        groupWriteService.registerInquiryReply(groupRegisterInquiryReplyDto);
     }
 }
