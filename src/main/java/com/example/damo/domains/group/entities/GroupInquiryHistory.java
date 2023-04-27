@@ -18,8 +18,15 @@ public class GroupInquiryHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+
+    // TODO: User Entity 생성되면 연동
     @Column(name = "user_id", nullable = false)
     private Long userId;
+
+    @ManyToOne(targetEntity = Group.class)
+    @JoinColumn(name = "group_id", insertable = false, updatable = false)
+    private Group group;
+
     @Column(name = "group_id", nullable = false)
     private Long groupId;
     @Column(name = "contents", columnDefinition = "TEXT", nullable = false, length = 300)
@@ -28,13 +35,14 @@ public class GroupInquiryHistory {
     private Boolean isChecked;
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
-    @Column(name = "checked_at", nullable = true)
+    @Column(name = "checked_at")
     private LocalDateTime checkedAt;
 
     @Builder
-    public GroupInquiryHistory(Long id, Long userId, Long groupId, String contents, Boolean isChecked, LocalDateTime createdAt, LocalDateTime checkedAt) {
+    public GroupInquiryHistory(Long id, Long userId, Group group, Long groupId, String contents, Boolean isChecked, LocalDateTime createdAt, LocalDateTime checkedAt) {
         this.id = id;
         this.userId = Objects.requireNonNull(userId);
+        this.group = group;
         this.groupId = Objects.requireNonNull(groupId);
         this.contents = Objects.requireNonNull(contents);
         validateMaxLengthBy(contents, CONTENTS_SAFE_MAX_LENGTH);
