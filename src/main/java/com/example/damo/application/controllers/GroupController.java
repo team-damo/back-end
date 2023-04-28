@@ -39,4 +39,6 @@ public class GroupController {
     public void registerInquiryReply(@RequestBody GroupRegisterInquiryReplyDto groupRegisterInquiryReplyDto) {
         groupWriteService.registerInquiryReply(groupRegisterInquiryReplyDto);
     }
+
+    // TODO: 문의 내역 리스트, 문의 답장 리스트
 }
