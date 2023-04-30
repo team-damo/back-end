@@ -15,6 +15,7 @@ public class GetGroupUsecase {
     private final GroupInquiryHistoryReadService groupInquiryHistoryReadService;
     private final GroupHitHistoryWriteService groupHitHistoryWriteService;
 
+
     public GetGroupUsecaseDto getGroupWithIsInquirer(Long groupId, Long userId) {
         GroupFindByIdDto group = groupReadService.findById(groupId);
         Boolean isInquirer = groupInquiryHistoryReadService.isInquirerOfGroup(groupId, userId);

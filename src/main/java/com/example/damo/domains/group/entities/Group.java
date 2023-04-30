@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;
@@ -39,7 +40,8 @@ public class Group {
     private Boolean isDone;
     @Column(name = "deadline_at")
     private LocalDateTime deadlineAt;
-    @Column(name = "created_at", nullable = false)
+    @CreatedDate
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
     @Column(name = "deleted_at")
     private LocalDateTime deletedAt;

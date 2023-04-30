@@ -3,6 +3,7 @@ package com.example.damo.application.controllers;
 import com.example.damo.application.usecases.groups.GetGroupUsecase;
 import com.example.damo.application.usecases.groups.dtos.GetGroupUsecaseDto;
 import com.example.damo.domains.group.dtos.*;
+import com.example.damo.domains.group.interfaces.GroupFindAllByTypeIdInterface;
 import com.example.damo.domains.group.services.GroupReadService;
 import com.example.damo.domains.group.services.GroupWriteService;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +23,7 @@ public class GroupController {
         return getGroupUsecase.getGroupWithIsInquirer(group, user);
     }
     @GetMapping("/{type}")
-    public List<GroupFindAllByTypeIdDto> findAll(@PathVariable Integer type) {
+    public List<GroupFindAllByTypeIdInterface> getAllGroupsByTypeId(@PathVariable Integer type) {
         return groupReadService.findAll(type);
     }
     @PostMapping()
