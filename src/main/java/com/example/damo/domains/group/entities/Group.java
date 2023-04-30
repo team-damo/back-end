@@ -40,7 +40,6 @@ public class Group {
     private Boolean isDone;
     @Column(name = "deadline_at")
     private LocalDateTime deadlineAt;
-    @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
     @Column(name = "deleted_at")

@@ -33,7 +33,7 @@ public class GroupInquiryHistory {
     private String contents;
     @Column(name = "is_checked", nullable = false)
     private Boolean isChecked;
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
     @Column(name = "checked_at")
     private LocalDateTime checkedAt;

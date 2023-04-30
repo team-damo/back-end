@@ -21,9 +21,9 @@ public class GroupMember {
     private Long userId;
     @Column(name = "group_id", nullable = false)
     private Long groupId;
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
-    @Column(name = "deleted_at", nullable = true)
+    @Column(name = "deleted_at")
     private LocalDateTime deletedAt;
 
     @Builder
