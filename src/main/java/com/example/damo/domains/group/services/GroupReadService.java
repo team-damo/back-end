@@ -1,7 +1,7 @@
 package com.example.damo.domains.group.services;
 
 import com.example.damo.domains.group.interfaces.GroupFindAllByTypeIdInterface;
-import com.example.damo.domains.group.dtos.GroupFindByIdDto;
+import com.example.damo.domains.group.interfaces.GroupFindByIdInterface;
 import com.example.damo.domains.group.entities.Group;
 import com.example.damo.domains.group.repositories.GroupRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,23 +18,11 @@ public class GroupReadService {
          return groupRepository.findAllByTypeId(type);
     }
 
-    public GroupFindByIdDto findById(Long id) {
-        Group group = groupRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("not found"));
-        return toIdDto(group);
-    }
-
-    private GroupFindByIdDto toIdDto(Group group) {
-        return new GroupFindByIdDto(
-                group.getId(),
-                group.getUserId(),
-                group.getGroupType().getName(),
-                group.getName(),
-                group.getIntroduction(),
-                group.getMaxUser(),
-                group.getIsDone(),
-                group.getDeadlineAt(),
-                group.getCreatedAt(),
-                group.getDeletedAt()
-        );
+    public GroupFindByIdInterface findById(Long id) {
+        GroupFindByIdInterface group = groupRepository.findByIdWithHit(id);
+        if(group == null) {
+            throw new IllegalArgumentException("not found");
+        }
+        return group;
     }
 }

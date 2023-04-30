@@ -16,8 +16,9 @@ public class GetGroupUsecaseDto {
     private String introduction;
     private Integer maxUser;
     private Boolean isDone;
-    private LocalDateTime deadlineAt;
-    private LocalDateTime createdAt;
-    private LocalDateTime deletedAt;
+    private String deadlineAt;
+    private String createdAt;
+    private String deletedAt;
+    private Long hit;
     private Boolean isInquirer;
 }

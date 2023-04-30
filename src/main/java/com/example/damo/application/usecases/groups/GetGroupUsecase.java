@@ -1,7 +1,7 @@
 package com.example.damo.application.usecases.groups;
 
 import com.example.damo.application.usecases.groups.dtos.GetGroupUsecaseDto;
-import com.example.damo.domains.group.dtos.GroupFindByIdDto;
+import com.example.damo.domains.group.interfaces.GroupFindByIdInterface;
 import com.example.damo.domains.group.services.GroupHitHistoryWriteService;
 import com.example.damo.domains.group.services.GroupInquiryHistoryReadService;
 import com.example.damo.domains.group.services.GroupReadService;
@@ -17,24 +17,25 @@ public class GetGroupUsecase {
 
 
     public GetGroupUsecaseDto getGroupWithIsInquirer(Long groupId, Long userId) {
-        GroupFindByIdDto group = groupReadService.findById(groupId);
+        GroupFindByIdInterface group = groupReadService.findById(groupId);
         Boolean isInquirer = groupInquiryHistoryReadService.isInquirerOfGroup(groupId, userId);
         groupHitHistoryWriteService.increaseHitOfGroup(groupId, userId);
         return toDto(group, isInquirer);
     }
 
-    private GetGroupUsecaseDto toDto(GroupFindByIdDto group, Boolean isInquirer) {
+    private GetGroupUsecaseDto toDto(GroupFindByIdInterface group, Boolean isInquirer) {
         return new GetGroupUsecaseDto(
                 group.getId(),
-                group.getUserId(),
+                group.getUser_Id(),
                 group.getName(),
-                group.getName(),
+                group.getType(),
                 group.getIntroduction(),
-                group.getMaxUser(),
-                group.getIsDone(),
-                group.getDeadlineAt(),
-                group.getCreatedAt(),
-                group.getDeletedAt(),
+                group.getMax_User(),
+                group.getIs_Done(),
+                group.getDeadline_At(),
+                group.getCreated_At(),
+                group.getDeleted_At(),
+                group.getHit(),
                 isInquirer
         );
     }
