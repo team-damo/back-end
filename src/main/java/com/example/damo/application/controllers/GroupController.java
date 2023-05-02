@@ -5,6 +5,8 @@ import com.example.damo.application.usecases.groups.dtos.GetGroupUsecaseDto;
 import com.example.damo.domains.group.dtos.*;
 import com.example.damo.domains.group.interfaces.GroupFindAllByReaderIdInterface;
 import com.example.damo.domains.group.interfaces.GroupFindAllByTypeIdInterface;
+import com.example.damo.domains.group.services.GroupJoinHistoryReadService;
+import com.example.damo.domains.group.services.GroupJoinHistoryWriteService;
 import com.example.damo.domains.group.services.GroupReadService;
 import com.example.damo.domains.group.services.GroupWriteService;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +21,8 @@ public class GroupController {
     private final GroupWriteService groupWriteService;
     private final GroupReadService groupReadService;
     private final GetGroupUsecase getGroupUsecase;
+    private final GroupJoinHistoryWriteService groupJoinHistoryWriteService;
+    private final GroupJoinHistoryReadService groupJoinHistoryReadService;
     @GetMapping("/{group}/{user}")
     public GetGroupUsecaseDto getById(@PathVariable Long group, @PathVariable Long user) {
         return getGroupUsecase.getGroupWithIsInquirer(group, user);
@@ -36,5 +40,14 @@ public class GroupController {
     @GetMapping("/{reader}/inquiries")
     public List<GroupFindAllByReaderIdInterface> getAllInquiriesByReaderId(Long reader) {
         return groupReadService.findAllInquiriesByReaderId(reader);
+    }
+
+    @GetMapping("/{group}/members/joins")
+    public List<Object> getAllJoinMembersByGroupId(@PathVariable Long group) {
+        return groupJoinHistoryReadService.getAllJoinMembersByGroupId(group);
+    }
+    @PostMapping("/members")
+    public void registerJoinMember(@RequestBody GroupSaveJoinDto groupSaveJoinMemberDto) {
+        groupJoinHistoryWriteService.registerJoinMember(groupSaveJoinMemberDto);
     }
 }

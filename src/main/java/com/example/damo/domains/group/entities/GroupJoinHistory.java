@@ -28,7 +28,7 @@ public class GroupJoinHistory {
     private Integer status;
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
-    @Column(name = "updated_at", nullable = true)
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
     @Builder
@@ -38,7 +38,7 @@ public class GroupJoinHistory {
         this.groupId = Objects.requireNonNull(groupId);
         this.message = Objects.requireNonNull(message);
         validateMaxLengthBy(message, MESSAGE_SAFE_MAX_LENGTH);
-        this.status = status < 3 ? status : 3;
+        this.status = status != null ? status : 3;
         this.createdAt = createdAt != null ? createdAt : LocalDateTime.now();
         this.updatedAt = updatedAt;
     }
