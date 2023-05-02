@@ -33,19 +33,8 @@ public class GroupController {
     }
 
 
-    @PostMapping("/inquiry")
-    public void registerInquiry(@RequestBody GroupRegisterInquiryDto groupRegisterInquiryDto) {
-        groupWriteService.registerInquiry(groupRegisterInquiryDto);
-    }
-    @PostMapping("/inquiry/reply")
-    public void registerInquiryReply(@RequestBody GroupRegisterInquiryReplyDto groupRegisterInquiryReplyDto) {
-        groupWriteService.registerInquiryReply(groupRegisterInquiryReplyDto);
-    }
-
     @GetMapping("/{reader}/inquiries")
     public List<GroupFindAllByReaderIdInterface> getAllInquiriesByReaderId(Long reader) {
         return groupReadService.findAllInquiriesByReaderId(reader);
     }
-
-    // TODO: 문의 내역 리스트, 문의 답장 리스트
 }

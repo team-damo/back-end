@@ -9,4 +9,5 @@ import java.util.Optional;
 @EnableJpaRepositories
 public interface GroupInquiryHistoryRepository extends JpaRepository<GroupInquiryHistory, Long> {
     Optional<GroupInquiryHistory> findByGroupIdAndUserId(Long groupId, Long userId);
+
 }

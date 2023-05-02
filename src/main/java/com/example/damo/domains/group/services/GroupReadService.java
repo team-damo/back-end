@@ -3,7 +3,6 @@ package com.example.damo.domains.group.services;
 import com.example.damo.domains.group.interfaces.GroupFindAllByReaderIdInterface;
 import com.example.damo.domains.group.interfaces.GroupFindAllByTypeIdInterface;
 import com.example.damo.domains.group.interfaces.GroupFindByIdInterface;
-import com.example.damo.domains.group.entities.Group;
 import com.example.damo.domains.group.repositories.GroupRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -30,4 +29,5 @@ public class GroupReadService {
     public List<GroupFindAllByReaderIdInterface> findAllInquiriesByReaderId(Long reader) {
         return groupRepository.findAllInquiriesByReaderId(reader);
     }
+
 }

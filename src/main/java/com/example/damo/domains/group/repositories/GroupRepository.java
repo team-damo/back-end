@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.util.List;
-import java.util.Optional;
 
 @EnableJpaRepositories
 public interface GroupRepository extends JpaRepository<Group, Long> {
@@ -46,4 +45,5 @@ public interface GroupRepository extends JpaRepository<Group, Long> {
     "ORDER BY inquiryCreatedAt DESC "
     )
     List<GroupFindAllByReaderIdInterface> findAllInquiriesByReaderId(Long reader);
+
 }
