@@ -3,6 +3,7 @@ package com.example.damo.application.controllers;
 import com.example.damo.application.usecases.groups.GetGroupUsecase;
 import com.example.damo.application.usecases.groups.dtos.GetGroupUsecaseDto;
 import com.example.damo.domains.group.dtos.*;
+import com.example.damo.domains.group.interfaces.GroupFindAllByReaderIdInterface;
 import com.example.damo.domains.group.interfaces.GroupFindAllByTypeIdInterface;
 import com.example.damo.domains.group.services.GroupReadService;
 import com.example.damo.domains.group.services.GroupWriteService;
@@ -39,6 +40,11 @@ public class GroupController {
     @PostMapping("/inquiry/reply")
     public void registerInquiryReply(@RequestBody GroupRegisterInquiryReplyDto groupRegisterInquiryReplyDto) {
         groupWriteService.registerInquiryReply(groupRegisterInquiryReplyDto);
+    }
+
+    @GetMapping("/{reader}/inquiries")
+    public List<GroupFindAllByReaderIdInterface> getAllInquiriesByReaderId(Long reader) {
+        return groupReadService.findAllInquiriesByReaderId(reader);
     }
 
     // TODO: 문의 내역 리스트, 문의 답장 리스트

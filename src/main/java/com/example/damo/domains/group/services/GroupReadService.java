@@ -1,5 +1,6 @@
 package com.example.damo.domains.group.services;
 
+import com.example.damo.domains.group.interfaces.GroupFindAllByReaderIdInterface;
 import com.example.damo.domains.group.interfaces.GroupFindAllByTypeIdInterface;
 import com.example.damo.domains.group.interfaces.GroupFindByIdInterface;
 import com.example.damo.domains.group.entities.Group;
@@ -24,5 +25,9 @@ public class GroupReadService {
             throw new IllegalArgumentException("not found");
         }
         return group;
+    }
+
+    public List<GroupFindAllByReaderIdInterface> findAllInquiriesByReaderId(Long reader) {
+        return groupRepository.findAllInquiriesByReaderId(reader);
     }
 }

@@ -5,13 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f3ec540-b6a6-4bd9-a675-b5001507deb9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/interfaces/GroupFindAllByReaderIdInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/GroupHitHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/GroupHitHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/GroupInquiryHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/GroupInquiryHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/GroupInquiryReplyHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/GroupInquiryReplyHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/GroupJoinHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/GroupJoinHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/GroupMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/entities/GroupMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/application/controllers/GroupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/application/controllers/GroupController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/Group$GroupBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/Group$GroupBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/Group.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupHitHistory$GroupHitHistoryBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupHitHistory$GroupHitHistoryBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupHitHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupHitHistory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupInquiryHistory$GroupInquiryHistoryBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupInquiryHistory$GroupInquiryHistoryBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupInquiryHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupInquiryHistory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupInquiryReplyHistory$GroupInquiryReplyHistoryBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupInquiryReplyHistory$GroupInquiryReplyHistoryBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupInquiryReplyHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupInquiryReplyHistory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupJoinHistory$GroupJoinHistoryBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupJoinHistory$GroupJoinHistoryBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupJoinHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupJoinHistory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupMember$GroupMemberBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupMember$GroupMemberBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupMember.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/entities/GroupMember.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/repositories/GroupRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/repositories/GroupRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/services/GroupReadService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/damo/domains/group/services/GroupReadService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GetGroupUsecaseDto$GetGroupUsecaseDtoBuilder.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GetGroupUsecaseDto.class.uniqueId5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GroupController.class.uniqueId6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GroupFindByIdInterface.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GroupReadService.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GroupReadService.class.uniqueId0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GroupRepository.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GroupWriteService.class.uniqueId4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/damo/application/controllers/GroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/application/controllers/GroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/repositories/GroupRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/repositories/GroupRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/services/GroupReadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/damo/domains/group/services/GroupReadService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +72,7 @@
       <list>
         <option value="Kotlin Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
