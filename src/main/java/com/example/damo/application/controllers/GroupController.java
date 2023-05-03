@@ -5,6 +5,7 @@ import com.example.damo.application.usecases.groups.dtos.GetGroupUsecaseDto;
 import com.example.damo.domains.group.dtos.*;
 import com.example.damo.domains.group.interfaces.GroupFindAllByReaderIdInterface;
 import com.example.damo.domains.group.interfaces.GroupFindAllByTypeIdInterface;
+import com.example.damo.domains.group.interfaces.GroupJoinHistoryFindAllByGroupIdAndDefaultStatusInterface;
 import com.example.damo.domains.group.services.GroupJoinHistoryReadService;
 import com.example.damo.domains.group.services.GroupJoinHistoryWriteService;
 import com.example.damo.domains.group.services.GroupReadService;
@@ -43,7 +44,7 @@ public class GroupController {
     }
 
     @GetMapping("/{group}/members/joins")
-    public List<Object> getAllJoinMembersByGroupId(@PathVariable Long group) {
+    public List<GroupJoinHistoryFindAllByGroupIdAndDefaultStatusInterface> getAllJoinMembersByGroupId(@PathVariable Long group) {
         return groupJoinHistoryReadService.getAllJoinMembersByGroupId(group);
     }
     @PostMapping("/members")
