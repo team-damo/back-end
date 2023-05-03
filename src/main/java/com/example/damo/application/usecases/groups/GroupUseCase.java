@@ -28,7 +28,7 @@ public class GroupUseCase {
 
     @Transactional
     public void registerMember(RegisterMemberDto registerMemberDto) {
-        groupJoinHistoryWriteService.remove(registerMemberDto.getJoinId());
+        groupJoinHistoryWriteService.updateStatus(registerMemberDto.getJoinId());
         groupMemberWriteService.save(registerMemberDto.getGroupId(), registerMemberDto.getUserId());
     }
 
