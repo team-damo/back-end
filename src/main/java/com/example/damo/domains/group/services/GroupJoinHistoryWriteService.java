@@ -13,4 +13,8 @@ public class GroupJoinHistoryWriteService {
     public void registerJoinMember(GroupSaveJoinDto groupSaveJoinDto) {
         groupJoinHistoryRepository.save(groupSaveJoinDto.toEntity());
     }
+
+    public void remove(Long id) {
+        groupJoinHistoryRepository.deleteById(id);
+    }
 }

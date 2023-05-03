@@ -1,4 +1,4 @@
-package com.example.damo.domains.group.entities;
+package com.example.damo.domains.group_member.entities;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -33,5 +33,12 @@ public class GroupMember {
         this.groupId = Objects.requireNonNull(groupId);
         this.createdAt = createdAt != null ? createdAt : LocalDateTime.now();
         this.deletedAt = deletedAt;
+    }
+
+    @Builder
+    public GroupMember(Long groupId, Long userId) {
+        this.userId = Objects.requireNonNull(userId);
+        this.groupId = Objects.requireNonNull(groupId);
+        this.createdAt = LocalDateTime.now();
     }
 }
