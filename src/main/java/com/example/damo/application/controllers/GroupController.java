@@ -1,7 +1,7 @@
 package com.example.damo.application.controllers;
 
 import com.example.damo.application.usecases.groups.GroupUseCase;
-import com.example.damo.application.usecases.groups.dtos.GetGroupUsecaseDto;
+import com.example.damo.application.usecases.groups.dtos.GetGroupUseCaseDto;
 import com.example.damo.domains.group.dtos.*;
 import com.example.damo.domains.group.interfaces.GroupFindAllByReaderIdInterface;
 import com.example.damo.domains.group.interfaces.GroupFindAllByTypeIdInterface;
@@ -21,12 +21,12 @@ import java.util.List;
 public class GroupController {
     private final GroupWriteService groupWriteService;
     private final GroupReadService groupReadService;
-    private final GroupUseCase getGroupUsecase;
+    private final GroupUseCase getGroupUseCase;
     private final GroupJoinHistoryWriteService groupJoinHistoryWriteService;
     private final GroupJoinHistoryReadService groupJoinHistoryReadService;
     @GetMapping("/{group}/{user}")
-    public GetGroupUsecaseDto getById(@PathVariable Long group, @PathVariable Long user) {
-        return getGroupUsecase.getGroupWithIsInquirer(group, user);
+    public GetGroupUseCaseDto getById(@PathVariable Long group, @PathVariable Long user) {
+        return getGroupUseCase.getGroupWithIsInquirer(group, user);
     }
     @GetMapping("/{type}")
     public List<GroupFindAllByTypeIdInterface> getAllGroupsByTypeId(@PathVariable Integer type) {
