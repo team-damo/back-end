@@ -11,6 +11,10 @@ import com.example.damo.domains.group.services.GroupJoinHistoryWriteService;
 import com.example.damo.domains.group.services.GroupReadService;
 import com.example.damo.domains.group.services.GroupWriteService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,14 +33,13 @@ public class GroupController {
         return getGroupUseCase.getGroupWithIsInquirer(group, user);
     }
     @GetMapping("/{type}")
-    public List<GroupFindAllByTypeIdInterface> getAllGroupsByTypeId(@PathVariable Integer type) {
-        return groupReadService.findAll(type);
+    public Page<GroupFindAllByTypeIdInterface> getAllGroupsByTypeId(@PathVariable Integer type, @PageableDefault(sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable) {
+        return groupReadService.findAll(type, pageable);
     }
     @PostMapping()
     public void create(@RequestBody GroupSaveDto groupSaveDto) {
         groupWriteService.create(groupSaveDto);
     }
-
 
     @GetMapping("/{reader}/inquiries")
     public List<GroupFindAllByReaderIdInterface> getAllInquiriesByReaderId(Long reader) {
