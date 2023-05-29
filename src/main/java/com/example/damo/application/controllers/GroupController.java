@@ -28,27 +28,27 @@ public class GroupController {
     private final GroupUseCase getGroupUseCase;
     private final GroupJoinHistoryWriteService groupJoinHistoryWriteService;
     private final GroupJoinHistoryReadService groupJoinHistoryReadService;
-    @GetMapping("/{group}/{user}")
-    public GetGroupUseCaseDto getById(@PathVariable Long group, @PathVariable Long user) {
-        return getGroupUseCase.getGroupWithIsInquirer(group, user);
+    @GetMapping("/{groupId}/{userId}")
+    public GetGroupUseCaseDto getById(@PathVariable Long groupId, @PathVariable Long userId) {
+        return getGroupUseCase.getGroupWithIsInquirer(groupId, userId);
     }
-    @GetMapping("/{type}")
-    public Page<GroupFindAllByTypeIdInterface> getAllGroupsByTypeId(@PathVariable Integer type, @PageableDefault(sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable) {
-        return groupReadService.findAll(type, pageable);
+    @GetMapping("/{typeId}")
+    public Page<GroupFindAllByTypeIdInterface> getAllGroupsByTypeId(@PathVariable Integer typeId, @PageableDefault(sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable) {
+        return groupReadService.findAll(typeId, pageable);
     }
     @PostMapping()
     public void create(@RequestBody GroupSaveDto groupSaveDto) {
         groupWriteService.create(groupSaveDto);
     }
 
-    @GetMapping("/{reader}/inquiries")
-    public List<GroupFindAllByReaderIdInterface> getAllInquiriesByReaderId(Long reader) {
-        return groupReadService.findAllInquiriesByReaderId(reader);
+    @GetMapping("/{readerId}/inquiries")
+    public List<GroupFindAllByReaderIdInterface> getAllInquiriesByReaderId(Long readerId) {
+        return groupReadService.findAllInquiriesByReaderId(readerId);
     }
 
-    @GetMapping("/{group}/members/joins")
-    public List<GroupJoinHistoryFindAllByGroupIdAndDefaultStatusInterface> getAllJoinMembersByGroupId(@PathVariable Long group) {
-        return groupJoinHistoryReadService.getAllJoinMembersByGroupId(group);
+    @GetMapping("/{groupId}/members/joins")
+    public List<GroupJoinHistoryFindAllByGroupIdAndDefaultStatusInterface> getAllJoinMembersByGroupId(@PathVariable Long groupId) {
+        return groupJoinHistoryReadService.getAllJoinMembersByGroupId(groupId);
     }
     @PostMapping("/members")
     public void registerJoinMember(@RequestBody GroupSaveJoinDto groupSaveJoinMemberDto) {

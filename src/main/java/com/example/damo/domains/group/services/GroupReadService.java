@@ -28,8 +28,8 @@ public class GroupReadService {
         return group;
     }
 
-    public List<GroupFindAllByReaderIdInterface> findAllInquiriesByReaderId(Long reader) {
-        return groupRepository.findAllInquiriesByReaderId(reader);
+    public List<GroupFindAllByReaderIdInterface> findAllInquiriesByReaderId(Long readerId) {
+        return groupRepository.findAllInquiriesByReaderId(readerId);
     }
 
 }
