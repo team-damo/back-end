@@ -115,6 +115,7 @@ public class AuthController {
                     .username(kakaoProfile.getProperties().getNickname())
                     .email(kakaoProfile.getKakao_account().getEmail())
                     .image(kakaoProfile.getProperties().getProfile_image())
+                    .oauth("KAKAO")
                     .build();
             userWriteService.save(user);
         }
