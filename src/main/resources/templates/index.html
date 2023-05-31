@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>로그인</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Kakao Login</h1>
+
+<span th:if="${userId == null}">
+    <a th:href="@{'https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=' + ${@environment.getProperty('kakao.client_id')} + '&redirect_uri=' + ${@environment.getProperty('kakao.login')}}">
+        대충 카카오 로그인 버튼
+    </a>
+</span>
+<span th:if="${userId != null}">
+    <form name="logout" action="http://localhost:8080/auth/kakao/logout">
+        <input type="submit" value="로그아웃" />
+    </form>
+</span>
+</body>
+</html>

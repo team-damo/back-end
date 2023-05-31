@@ -13,6 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.example.damo.application.controllers.GroupController;
 import com.example.damo.application.usecases.groups.GroupUseCase;
+import com.example.damo.domains.group.entities.Group;
 import com.example.damo.domains.group.interfaces.GroupJoinHistoryFindAllByGroupIdAndDefaultStatusInterface;
 import com.example.damo.domains.group.services.GroupJoinHistoryReadService;
 import com.example.damo.domains.group.services.GroupJoinHistoryWriteService;
@@ -26,6 +27,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 @WebMvcTest(controllers = GroupController.class)
@@ -52,7 +54,7 @@ public class GroupControllerTest {
 
     @Test
     @DisplayName("그룹 - 없는 그룹 조회")
-    void findAll() throws Exception {
+    void findAllMissingGroup() throws Exception {
         given(groupJoinHistoryReadService.getAllJoinMembersByGroupId((long) 10000000)).willReturn(new ArrayList<>());
 
         int typeId = 10000000;
